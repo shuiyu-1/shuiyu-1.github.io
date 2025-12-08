@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社会主义核心价值观</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            color: #333;
+            overflow: hidden; /* 隐藏默认滚动条 */
+        }
+
+        /* 页面容器 */
+        .pages-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* 单页样式 */
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            opacity: 0; /* 默认隐藏 */
+            transition: opacity 0.8s ease-in-out; /* 淡入淡出过渡 */
+            text-align: center;
+        }
+
+        /* 激活的页面显示 */
+        .page.active {
+            opacity: 1;
+        }
+
+        /* 各页面背景色区分 */
+        .page-1 {
+            background-color: #fdf2f8;
+        }
+
+        .page-2 {
+            background-color: #fef7fb;
+        }
+
+        .page-3 {
+            background-color: #f5fafe;
+        }
+
+        .page-4 {
+            background-color: #f7f3e9;
+        }
+
+        .page-5 {
+            background-color: #f8f8f8;
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 3.5rem;
+            color: #c0392b;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        /* 核心价值观网格布局 */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        /* 单个价值观项 */
+        .value-item {
+            font-size: 2rem;
+            padding: 1.5rem 2rem;
+            border: 2px solid #c0392b;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #c0392b;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: scale(1.05);
+            background-color: #fef9f8;
+        }
+
+        /* 正文文本 */
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0.8rem 0;
+            color: #555;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                width: 90%;
+            }
+
+            .value-item {
+                font-size: 1.5rem;
+                padding: 1rem 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .page {
+                padding: 1rem;
+            }
+        }
+
+        /* 提示文本 */
+        .tip {
+            position: fixed;
+            bottom: 2rem;
+            font-size: 1rem;
+            color: #999;
+            animation: blink 2s infinite alternate;
+        }
+
+        @keyframes blink {
+            from { opacity: 0.6; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="pages-container">
+        <!-- 第一页：封面 -->
+        <section class="page page-1">
+            <h1>社会主义核心价值观</h1>
+            <p>凝心聚力 · 共筑中国梦</p>
+        </section>
+
+        <!-- 第二页：国家层面 -->
+        <section class="page page-2">
+            <h2>国家层面 · 价值目标</h2>
+            <div class="values-grid">
+                <div class="value-item">富强</div>
+                <div class="value-item">民主</div>
+                <div class="value-item">文明</div>
+                <div class="value-item">和谐</div>
+            </div>
+            <p>富强、民主、文明、和谐是我国社会主义现代化国家的建设目标，</p>
+            <p>也是从价值目标层面对社会主义核心价值观基本理念的凝练。</p>
+        </section>
+
+        <!-- 第三页：社会层面 -->
+        <section class="page page-3">
+            <h2>社会层面 · 价值取向</h2>
+            <div class="values-grid">
+                <div class="value-item">自由</div>
+                <div class="value-item">平等</div>
+                <div class="value-item">公正</div>
+                <div class="value-item">法治</div>
+            </div>
+            <p>自由、平等、公正、法治是对美好社会的生动表述，</p>
+            <p>也是从社会层面对社会主义核心价值观基本理念的凝练。</p>
+        </section>
+
+        <!-- 第四页：公民层面 -->
+        <section class="page page-4">
+            <h2>公民层面 · 价值准则</h2>
+            <div class="values-grid">
+                <div class="value-item">爱国</div>
+                <div class="value-item">敬业</div>
+                <div class="value-item">诚信</div>
+                <div class="value-item">友善</div>
+            </div>
+            <p>爱国、敬业、诚信、友善是公民基本道德规范，</p>
+            <p>也是从个人行为层面对社会主义核心价值观基本理念的凝练。</p>
+        </section>
+
+        <!-- 第五页：总结 -->
+        <section class="page page-5">
+            <h2>践行核心价值观 · 共赴美好未来</h2>
+            <p>社会主义核心价值观是当代中国精神的集中体现，凝结着全体人民共同的价值追求。</p>
+            <p>我们要自觉践行，将个人发展融入国家发展、社会进步之中，</p>
+            <p>为实现中华民族伟大复兴的中国梦而不懈奋斗。</p>
+        </section>
+    </div>
+
+    <div class="tip">滚动鼠标滚轮或滑动屏幕切换页面</div>
+
+    <script>
+        // 获取所有页面元素
+        const pages = document.querySelectorAll('.page');
+        let currentPage = 0; // 当前显示的页面索引
+
+        // 初始化：显示第一页
+        pages[currentPage].classList.add('active');
+
+        // 滚轮事件监听（PC端）
+        window.addEventListener('wheel', (e) => {
+            e.preventDefault(); // 阻止默认滚动行为
+            changePage(e.deltaY > 0 ? 1 : -1); // deltaY>0 向下滚动，切换下一页；否则上一页
+        }, { passive: false });
+
+        // 触摸事件监听（移动端）
+        let touchStartY = 0;
+        window.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        });
+
+        window.addEventListener('touchend', (e) => {
+            const touchEndY = e.changedTouches[0].clientY;
+            const deltaY = touchEndY - touchStartY;
+            // 滑动距离超过50px才触发切换
+            if (deltaY < -50) {
+                changePage(1); // 向上滑动，切换下一页
+            } else if (deltaY > 50) {
+                changePage(-1); // 向下滑动，切换上一页
+            }
+        });
+
+        // 页面切换函数
+        function changePage(direction) {
+            // 计算新页面索引，限制在0-4之间
+            const newPage = Math.max(0, Math.min(currentPage + direction, pages.length - 1));
+            
+            // 避免重复切换同一页面
+            if (newPage === currentPage) return;
+
+            // 隐藏当前页面，显示新页面
+            pages[currentPage].classList.remove('active');
+            pages[newPage].classList.add('active');
+            
+            // 更新当前页面索引
+            currentPage = newPage;
+        }
+
+        // 键盘方向键控制（可选）
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                changePage(1);
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                changePage(-1);
+            }
+        });
+    </script>
+</body>
+</html>
